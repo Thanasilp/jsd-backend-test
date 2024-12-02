@@ -21,23 +21,20 @@ connectCloudinary();
 app.use(express.json());
 
 const allowedOrigins = [
-  // "http://meal-kit-ecommerce-project-deployed-frontend.vercel.app/",
-  // "http://localhost:5173", //admin
-  // "http://localhost:3001", //user
-  "https://jsd-admin.vercel.app", // admin frfont
+  "https://jsd-admin.vercel.app",
+  "http://localhost:5172", // For local development
+  "http://localhost:5173", // For local development
 ];
-
+// Configure CORS
 app.use(
   cors({
     origin: (origin, callback) => {
-      //Allow requests with no origin (eg. mobile or curl)
-      if (!origin) {
-        return callback(null, true);
-      }
+      // Allow requests with no origin (e.g., mobile apps or curl)
+      if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) {
-        callback(null, true); //Allow the origin
+        callback(null, true); // Allow the origin
       } else {
-        callback(new Error("Not allowed by CORS"));
+        callback(new Error("Not allowed by CORS")); // Block the origin
       }
     },
     methods: ["GET", "POST", "PUT", "DELETE"],
