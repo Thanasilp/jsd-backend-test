@@ -21,9 +21,10 @@ connectCloudinary();
 app.use(express.json());
 
 const allowedOrigins = [
-  "https://meal-kit-ecommerce-project-deployed-frontend.vercel.app/",
-  "https://localhost:3000", //admin
-  "https://localhost:3001", //user
+  // "http://meal-kit-ecommerce-project-deployed-frontend.vercel.app/",
+  // "http://localhost:5173", //admin
+  // "http://localhost:3001", //user
+  "https://jsd-admin.vercel.app/", // admin frfont
 ];
 
 app.use(
