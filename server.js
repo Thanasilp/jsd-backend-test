@@ -24,7 +24,7 @@ const allowedOrigins = [
   // "http://meal-kit-ecommerce-project-deployed-frontend.vercel.app/",
   // "http://localhost:5173", //admin
   // "http://localhost:3001", //user
-  "https://jsd-admin.vercel.app/", // admin frfont
+  "https://jsd-admin.vercel.app", // admin frfont
 ];
 
 app.use(
